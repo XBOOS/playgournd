@@ -16,3 +16,11 @@ primes n = [x | x<- [2..n] , prime x]
 --facotrs 10
 --prime 7
 --primes 56
+
+--using zip to mimic sliding window
+pairs ::[a] ->[(a,a)]
+pairs  xs = zip xs (tail xs)
+
+sorted ::Ord a=>[a]->Bool
+sorted xs = 
+  and [x<=y| (x,y)<-pairs xs]
