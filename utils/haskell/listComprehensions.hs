@@ -1,5 +1,6 @@
 module ListComprehension where
 import Prelude
+import Data.Char
 -- some utils to use list comprehensions
 factors :: Int ->[Int]
 factors n = 
@@ -24,3 +25,14 @@ pairs  xs = zip xs (tail xs)
 sorted ::Ord a=>[a]->Bool
 sorted xs = 
   and [x<=y| (x,y)<-pairs xs]
+
+
+positions :: Eq a=>a->[a] ->[Int]
+positions x xs = 
+  [i| (x',i) <- zip xs [0..n], x==x']
+    where n = length xs -1
+    
+
+lowers :: String ->Int
+lowers  xs = 
+  length [x| x<- xs,isLower x]
