@@ -22,3 +22,10 @@ p +++ q = \input -> case  parse p input of
 
 parse :: Parser a -> String -> [(a,String)]
 parse p input = p input
+
+---
+p :: Parser (Char,Char)
+p = do x <- item
+       item
+       y <- item
+       return (x,y)
