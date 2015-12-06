@@ -36,3 +36,7 @@ positions x xs =
 lowers :: String ->Int
 lowers  xs = 
   length [x| x<- xs,isLower x]
+
+length' :: [a]->Int
+length' xs = [1|x<-xs]
+
