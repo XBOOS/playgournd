@@ -82,7 +82,7 @@ bool RandomChance(double probability)
 
 void PlaceFood(gameT& game)
 {
-    while(True){
+    while(true){
         int row = rand() % game.numRows;
         int col = rand() % game.numCols;
 
@@ -103,8 +103,8 @@ void PrintWorld(gameT& game)
     system(kClearCommand.c_str());
 
     //print each row
-    for(int i =0;i<game.world.numRows;i++){
-        cout<<game.world[row]<<endl;
+    for(int i =0;i< game.numRows;++i){
+        cout<<game.world[i]<<endl;
     }
 
     cout<<"Food eaten:  "<<game.numEaten<<endl;
@@ -203,7 +203,7 @@ void PerformAI(gameT& game)
     pointT nextSpot = GetNextPosition(game,game.dx,game.dy);
 
     //if this crashes us or we just feel like turning. turn!
-    if(Crashed(nextSpot,game) || randomChance(kTurnRate))
+    if(Crashed(nextSpot,game) || RandomChance(kTurnRate))
     {
     /* Compute what direction we'd be facing if we turned left or
          * right.  From linear algebra we have the following:
