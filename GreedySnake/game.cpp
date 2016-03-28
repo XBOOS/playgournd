@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<fstream>
 #include<deque>
 #include<vector>
 #include<cstdlib> // rand,srand,system
