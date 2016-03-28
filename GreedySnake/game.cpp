@@ -32,7 +32,7 @@ const string kClearCommand = "clear";
 struct pointT
 {
     int row,col;
-}
+};
 
 
 /* A struct containing relevant game information
